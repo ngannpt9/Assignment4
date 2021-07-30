@@ -8,7 +8,7 @@ import java.util.*;
  * This class have methods use Collection Framework.
  *
  * @author Ngan Nguyen
- * github page:
+ * github page: https://ngannpt9.github.io/Assignment4/
  */
 public class MyCollections {
     /**
