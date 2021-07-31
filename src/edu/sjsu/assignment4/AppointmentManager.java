@@ -6,7 +6,7 @@ import java.util.Map;
  * This class manages a collection of appointment.
  *
  */
-public class AppointmentManager extends HashMap<Appointment, String> {
+public class AppointmentManager extends HashMap<String, Appointment> {
 
     /**
      * Add an appointment with type, description, start date, end date
@@ -17,7 +17,7 @@ public class AppointmentManager extends HashMap<Appointment, String> {
     public boolean addApp(Appointment appointment) {
         String des = appointment.getDescription();
         if (this.containsKey(des)) return false;
-        else this.put(appointment, des);
+        else this.put(des, appointment);
             return true;
         }
 
@@ -27,9 +27,8 @@ public class AppointmentManager extends HashMap<Appointment, String> {
      * @return true if delete successfully.
      */
     public boolean deleteApp(String desDelete) {
-        Appointment appointment = new Appointment(desDelete);
-        if (this.containsKey(appointment)) {
-            this.remove(appointment);
+        if (this.containsKey(desDelete)) {
+            this.remove(desDelete);
             return true;
         } else {
             return false;
@@ -41,8 +40,8 @@ public class AppointmentManager extends HashMap<Appointment, String> {
      *
      */
     public void viewApp() {
-            for (Map.Entry<Appointment, String> e : this.entrySet()) {
-                System.out.println(e.getKey().toString());
+            for (Map.Entry<String, Appointment> e : this.entrySet()) {
+                System.out.println(e.getValue().toString());
             }
         }
 }

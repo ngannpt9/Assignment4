@@ -86,7 +86,7 @@ public class Appointment implements Comparable<Appointment>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Appointment that = (Appointment) o;
-        return Objects.equals(description, that.description) && Objects.equals(startDate, that.startDate) && Objects.equals(endDate, that.endDate);
+        return Objects.equals(description, that.description);
     }
 
     /**
@@ -96,7 +96,7 @@ public class Appointment implements Comparable<Appointment>{
      */
     @Override
     public int hashCode() {
-        return Objects.hash(description, startDate, endDate);
+        return Objects.hash(description);
     }
 
     /**
